@@ -1023,21 +1023,8 @@ select[multiple="multiple"] {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.main-left .nav li.slide .slide-menu li::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  content: "";
-  background-color: var(--primary);
-  transition: all 0.2s;
-}
 .main-left .nav li.slide .slide-menu li:hover {
   background: none;
-}
-.main-left .nav li.slide .slide-menu li:hover::after {
-  width: 100%;
 }
 .main-left .nav li.slide .slide-menu .active {
   background: none;
@@ -1046,21 +1033,8 @@ select[multiple="multiple"] {
 .main-left .nav li.slide .slide-menu .active a {
   color: var(--menu-color);
 }
-.main-left .nav li.slide .slide-menu .active::after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  content: "";
-  background-color: var(--primary);
-  transition: all 0.2s;
-}
 .main-left .nav li.slide .slide-menu .active:hover {
   background: none;
-}
-.main-left .nav li.slide .slide-menu .active:hover::after {
-  width: 100%;
 }
 .main-left .nav li .menu {
   display: block;
@@ -1505,7 +1479,16 @@ footer > a {
   transition: transform 0.2s ease;
 }
 .main-left .nav li.slide > .menu.active::after {
+  color: var(--menu-active-color) !important;
+  background: currentColor;
   transform: translateY(-50%) rotate(180deg);
+}
+.main-left .nav li.slide > .menu:hover::after {
+  color: var(--main-menu-color) !important;
+  background: currentColor;
+}
+.main-left .nav li.slide > .menu.active:hover::after {
+  color: var(--menu-active-color) !important;
 }
 .main-left .nav li.slide > .menu.active::before,
 .main-left .nav li.slide > .food.active::before {
@@ -1528,10 +1511,6 @@ footer > a {
 }
 .main-left .nav li.slide .slide-menu li {
   margin: 0;
-}
-.main-left .nav li.slide .slide-menu li::after {
-  display: none !important;
-  content: none !important;
 }
 .main-left .nav li.slide .slide-menu li a {
   display: block;
@@ -1630,6 +1609,11 @@ header .fill .container .flex1 .brand {
   font-size: 1.0625rem;
   font-weight: 700;
   color: var(--main-menu-color);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #xhr_poll_status {
   display: flex;
@@ -3783,6 +3767,13 @@ pre.command-output {
 [data-page="admin-system-opkg"] #maincontent > .container {
   margin: 0 1.25rem 1rem 1.25rem;
   margin-bottom: 1rem;
+}
+#maincontent > .container > h2:first-child,
+#maincontent > .container > h2[name="content"] {
+  display: none;
+}
+#maincontent > .container > h2:first-child + br {
+  display: none;
 }
 [data-page="admin-system-package-manager"] .controls div:nth-child(5) > label {
   margin-bottom: 5px;

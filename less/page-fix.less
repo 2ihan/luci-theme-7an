@@ -325,6 +325,16 @@
     }
 }
 
+// Hide the duplicated page title in the content area.
+#maincontent > .container > h2:first-child,
+#maincontent > .container > h2[name="content"] {
+    display: none;
+}
+
+#maincontent > .container > h2:first-child + br {
+    display: none;
+}
+
 [data-page="admin-system-package-manager"] {
     .controls {
         div:nth-child(5) {
