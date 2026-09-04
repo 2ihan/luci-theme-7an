@@ -23,7 +23,7 @@
 
 				<span class="footer-separator">|</span>
 
-				<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme {# vPKG_VERSION #}</a>
+				<a href="https://github.com/2ihan/luci-theme-7an" target="_blank">7anTheme {# vPKG_VERSION #}</a>
 
 				<span class="footer-separator">|</span>
 
@@ -50,6 +50,6 @@
 		}
 	});
 </script>
-<script type="text/javascript">L.require('menu-argon')</script>
+<script type="text/javascript">L.require('menu-7an')</script>
 </body>
 </html>
