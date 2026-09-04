@@ -186,23 +186,6 @@ const SlideAnimations = {
 	}
 };
 
-const MenuIconMap = {
-	status: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
-	system: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>',
-	services: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
-	network: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
-	modem: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 14V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8"/></svg>',
-	nas: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>',
-	vpn: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
-	docker: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>',
-	control: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>',
-	statistics: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
-	bandwidth_monitor: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>',
-	asterisk: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07L19.07 4.93"/></svg>',
-	logout: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>',
-	default: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
-};
-
 /**
  * Argon Theme Menu Module
  * Handles rendering and interaction of the main navigation menu and sidebar
@@ -256,16 +239,7 @@ return baseclass.extend({
 	 * @param {Event} ev - Click event from menu item
 	 */
 	handleMenuExpand: function (ev) {
-		var target = ev.currentTarget || ev.target;
-
-		if (!target.classList || !target.classList.contains('menu')) {
-			target = target.closest ? target.closest('a.menu') : null;
-		}
-
-		if (!target) {
-			return;
-		}
-
+		var target = ev.target;
 		var slide = target.parentNode;
 		var slideMenu = target.nextElementSibling;
 		var shouldCollapse = false;
@@ -278,7 +252,6 @@ return baseclass.extend({
 			// Remove active classes immediately when starting slideUp animation
 			ul.classList.remove('active');
 			ul.previousElementSibling.classList.remove('active');
-			ul.previousElementSibling.setAttribute('aria-expanded', 'false');
 			SlideAnimations.slideUp(ul, 'fast');
 			
 			// Check if we're clicking on an already open menu (should collapse it)
@@ -300,7 +273,6 @@ return baseclass.extend({
 				// Add active classes immediately when starting slideDown animation
 				slideMenu.classList.add('active');
 				target.classList.add('active');
-				target.setAttribute('aria-expanded', 'true');
 				SlideAnimations.slideDown(slideMenuElement, 'fast');
 			}
 			target.blur(); // Remove focus from the clicked element
@@ -342,20 +314,14 @@ return baseclass.extend({
 			var hasChildren = submenu.children.length > 0;
 			
 			// Determine CSS classes based on state
-			var slideClass = hasChildren ? 'slide' : '';
+			var slideClass = hasChildren ? 'slide' : null;
 			var menuClass = hasChildren ? 'menu' : 'food';
 			
 			if (isActive) {
 				menuContainer.classList.add('active');
-				slideClass += ' active';
-				menuClass += ' active';
+				slideClass += " active";
+				menuClass += " active";
 			}
-
-			var title = String(child.title || child.name);
-			var linkChildren = currentLevel === 1 ? [
-				this.renderMenuIcon(child.name),
-				E('span', { 'class': 'menu-text' }, [_(title)])
-			] : [_(title)];
 
 			// Create menu item with link and submenu
 			var menuItem = E('li', { 'class': slideClass }, [
@@ -363,9 +329,8 @@ return baseclass.extend({
 					'href': L.url(url, child.name),
 					'click': (currentLevel === 1) ? ui.createHandlerFn(this, 'handleMenuExpand') : null,
 					'class': menuClass,
-					'data-title': title.replace(/ /g, '_'),
-					'aria-expanded': hasChildren ? (isActive ? 'true' : 'false') : null
-				}, linkChildren),
+					'data-title': child.title.replace(/ /g, "_"), // More robust space replacement
+				}, [_(child.title)]),
 				submenu
 			]);
 			
@@ -382,16 +347,6 @@ return baseclass.extend({
 		}
 		
 		return menuContainer;
-	},
-
-	renderMenuIcon: function (name) {
-		var key = String(name || '').toLowerCase().replace(/-/g, '_');
-		var icon = MenuIconMap[key] || MenuIconMap.default;
-		var span = E('span', { 'class': 'menu-icon', 'aria-hidden': 'true' });
-
-		span.innerHTML = icon;
-
-		return span;
 	},
 
 	renderModeMenu: function (tree) {
