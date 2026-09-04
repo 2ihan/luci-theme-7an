@@ -55,7 +55,9 @@
 	<div class="main">
 		<div class="main-left" id="mainmenu" style="display:none">
 			<div class="sidenav-header d-flex align-items-center">
-				<a class="brand" href="#">{{ hostname }}</a>
+				<a class="brand" href="#" aria-label="{{ hostname }}">
+					<img class="brand-logo" src="{{ media }}/img/brand.png" alt="{{ hostname }}">
+				</a>
 				<div class="ml-auto">
 					<!-- Sidenav toggler -->
 					<div class="sidenav-toggler d-none d-xl-block active" data-action="sidenav-unpin"
