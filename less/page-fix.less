@@ -325,13 +325,16 @@
     }
 }
 
-// Hide the duplicated page title in the content area.
+// Hide the duplicated page title inside the main content map.
 #maincontent > .container > h2:first-child,
-#maincontent > .container > h2[name="content"] {
+#maincontent > .container > h2[name="content"],
+#maincontent .cbi-map > h2,
+#maincontent .cbi-map > h2[name="content"] {
     display: none;
 }
 
-#maincontent > .container > h2:first-child + br {
+#maincontent > .container > h2:first-child + br,
+#maincontent .cbi-map > h2 + br {
     display: none;
 }
 
