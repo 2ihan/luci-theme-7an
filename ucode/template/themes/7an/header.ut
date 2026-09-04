@@ -78,7 +78,7 @@
 					<div class="container">
 						<div class="flex1">
 							<a class="showSide"></a>
-							<a class="brand" id="page-title" href="#">{{ striptags(node?.title ?? '') }}</a>
+							<a class="brand" id="page-title" href="#">7安路由器定制固件/售后微信:QAnRouter</a>
 						</div>
 						<div class="status" id="indicators"></div>
 					</div>

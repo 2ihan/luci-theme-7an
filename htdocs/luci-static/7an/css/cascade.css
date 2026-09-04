@@ -1178,7 +1178,7 @@ select[multiple="multiple"] {
   flex-direction: column;
 }
 .main-right > #maincontent > .container {
-  margin: 0 1.25rem 1rem 1.25rem;
+  margin: 0.5rem 1.25rem 1rem 1.25rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -3765,7 +3765,7 @@ pre.command-output {
   padding: 0.3rem 0.6rem;
 }
 [data-page="admin-system-opkg"] #maincontent > .container {
-  margin: 0 1.25rem 1rem 1.25rem;
+  margin: 0.5rem 1.25rem 1rem 1.25rem;
   margin-bottom: 1rem;
 }
 [data-page="admin-system-package-manager"] .controls div:nth-child(5) > label {

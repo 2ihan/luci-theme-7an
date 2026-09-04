@@ -219,7 +219,6 @@ return baseclass.extend({
 		var node = tree;
 		var url = '';
 
-		this.updateHeaderTitle(tree);
 		this.renderModeMenu(node);
 
 		// Render tab menu if we're deep enough in the navigation hierarchy
@@ -387,34 +386,6 @@ return baseclass.extend({
 		span.innerHTML = GoflowIcons[key] || GoflowIcons.default;
 
 		return span;
-	},
-
-	resolveHeaderTitle: function (tree) {
-		var node = tree;
-		var title = '';
-		var path = Array.isArray(L.env.dispatchpath) ? L.env.dispatchpath : [];
-
-		for (var i = 0; i < path.length && node && node.children; i++) {
-			var child = node.children[path[i]];
-
-			if (!child)
-				break;
-
-			node = child;
-
-			if (node.title)
-				title = _(node.title);
-		}
-
-		return title;
-	},
-
-	updateHeaderTitle: function (tree) {
-		var titleNode = document.getElementById('page-title');
-		var title = this.resolveHeaderTitle(tree);
-
-		if (titleNode)
-			titleNode.textContent = title || '';
 	},
 
 	renderModeMenu: function (tree) {
