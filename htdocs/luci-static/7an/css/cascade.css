@@ -1598,6 +1598,7 @@ header .fill .container .flex1 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  min-width: 0;
 }
 header .fill .container .flex1 .showSide {
   color: var(--menu-color);
@@ -1614,6 +1615,9 @@ header .fill .container .flex1 .brand {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+header .fill .container .status {
+  flex: 0 0 auto;
 }
 #xhr_poll_status {
   display: flex;
@@ -4939,6 +4943,7 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
   }
   header > .fill > .container > .flex1 > .brand {
     display: inline-block;
+    font-size: 0.875rem;
   }
   .main > .main-left > .nav > .slide > .slide-menu > li > a {
     font-size: 0.875rem;
@@ -4999,6 +5004,9 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
 @media screen and (max-width: 480px) {
   .mobile-hide {
     display: none;
+  }
+  header > .fill > .container > .flex1 > .brand {
+    font-size: 0.75rem;
   }
   div[style*="display:grid;grid-template-columns:repeat"] .ifacebox {
     flex-basis: 80px;

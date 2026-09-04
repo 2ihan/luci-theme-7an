@@ -882,6 +882,7 @@ header .fill .container .flex1 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    min-width: 0;
 
     .showSide {
         color: var(--menu-color);
@@ -900,4 +901,8 @@ header .fill .container .flex1 {
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+}
+
+header .fill .container .status {
+    flex: 0 0 auto;
 }
